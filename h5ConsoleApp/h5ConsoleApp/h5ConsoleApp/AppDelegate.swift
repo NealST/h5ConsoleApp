@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  h5ConsoleApp
 //
-//  Created by didi on 2019/6/19.
+//  Created by didi on 2019/6/22.
 //  Copyright © 2019年 didi. All rights reserved.
 //
 
@@ -12,10 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var rootViewController: UIViewController!
+    var navigationController: UINavigationController!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        rootViewController = MainViewController()
+        navigationController = UINavigationController(rootViewController: rootViewController)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
         return true
     }
 
